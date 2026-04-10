@@ -1,0 +1,151 @@
+/* --- 1. Reset Default & Global Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Variabel Warna Premium */
+  --primary-color: #4f46e5; /* Indigo modern */
+  --secondary-color: #f1f5f9; /* Abu-abu sangat muda */
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --bg-gradient: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 100%
+  ); /* Gradasi Latar */
+  --card-bg: #ffffff;
+  --font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* --- 2. Positioning Container --- */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Tinggi penuh layar */
+  padding: 20px;
+}
+
+/* --- 3. Profile Card Styles --- */
+.profile-card {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 380px; /* Lebar maksimal kartu */
+  border-radius: 24px; /* Sudut sangat membulat, gaya modern */
+  overflow: hidden; /* Memastikan konten tidak keluar dari sudut bulat */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Bayangan lembut yang dalam */
+  transition: transform 0.3s ease; /* Persiapan untuk animasi hover pada kartu */
+}
+
+/* Efek kartu sedikit terangkat saat ditunjuk */
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+/* --- 4. Card Header (Background inside card) --- */
+.card-header {
+  height: 120px;
+  background-image: url("https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=600&auto=format&fit=crop"); /* Gambar gradasi abstrak */
+  background-size: cover;
+  background-position: center;
+}
+
+/* --- 5. Avatar (Mengambang di tengah) --- */
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -60px; /* Menarik gambar ke atas agar tumpang tindih dengan header */
+  position: relative;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Bulat sempurna */
+  border: 5px solid var(--card-bg); /* Garis pinggir tebal warna kartu */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Bayangan pada foto */
+  background-color: white;
+}
+
+/* --- 6. Card Body (Teks) --- */
+.card-body {
+  padding: 25px 30px 15px 30px;
+  text-align: center;
+}
+
+#profile-name {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.profile-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--primary-color); /* Warna aksen untuk gelar */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.profile-bio {
+  font-size: 15px;
+  color: var(--text-light);
+  font-weight: 300;
+}
+
+/* --- 7. Card Footer (Tombol) --- */
+.card-footer {
+  padding: 0 30px 30px 30px;
+  display: flex;
+  gap: 15px; /* Jarak antar tombol */
+  justify-content: center;
+}
+
+/* Base Styles Tombol */
+button {
+  flex: 1; /* Tombol berbagi lebar yang sama */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Animasi halus saat hover */
+}
+
+/* Tombol Utama (Indigo) */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #4338ca; /* Indigo lebih gelap */
+  transform: translateY(-2px); /* Sedikit terangkat */
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+}
+
+/* Tombol Kedua (Light) */
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-dark);
+  border: 1px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+}
